@@ -9,72 +9,100 @@ st.set_page_config(page_title="World Cup Sweepstake", page_icon="🏆", layout="
 st.title("🏆 World Cup 2022 Sweepstake Dashboard")
 
 # ----------------------------------
-# Data Loading & Dynamic Mapping Bridge
+# Path-Agnostic Data Loading
 # ----------------------------------
 @st.cache_data
 def load_and_map_data():
-    stats_path = "data/team_stats_2022.csv"
-    matches_path = "data/matches_2022.csv"
+    # Force Python to look relative to the actual location of this script file
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    data_dir = os.path.join(base_dir, "data")
     
-    if not os.path.exists(stats_path) or not os.path.exists(matches_path):
-        st.error("⚠️ Data files not found! Run your ingestion/transform pipelines first.")
+    # Track potential naming variations across scripts
+    stats_names = ["team_stats_2022.csv", "world_cup_2022_team_stats.csv"]
+    matches_names = ["matches_2022.csv", "world_cup_2022_matches.csv"]
+    
+    stats_path = None
+    matches_path = None
+    
+    # Scan for the files dynamically
+    if os.path.exists(data_dir):
+        for name in stats_names:
+            potential_path = os.path.join(data_dir, name)
+            if os.path.exists(potential_path):
+                stats_path = potential_path
+                break
+        
+        for name in matches_names:
+            potential_path = os.path.join(data_dir, name)
+            if os.path.exists(potential_path):
+                matches_path = potential_path
+                break
+
+    # If anything is missing, show a helpful diagnostic helper in the UI
+    if not stats_path or not matches_path:
+        st.error("⚠️ Data files not found!")
+        
+        with st.expander("Diagnostic Tool (Click to expand and see why)", expanded=True):
+            st.markdown(f"**Dashboard Location:** `{base_dir}`")
+            st.markdown(f"**Looking for data folder at:** `{data_dir}`")
+            
+            if os.path.exists(data_dir):
+                st.success("✅ `data/` folder exists!")
+                st.markdown(f"**Files inside your data folder right now:**")
+                st.code(os.listdir(data_dir))
+            else:
+                st.error("❌ The `data/` folder does not exist at that path.")
+                
+            st.info("💡 Quick Fix: Make sure you have run your transform.py script to generate the CSV files first!")
         return None, None
 
+    # Load data if paths are verified
     stats = pd.read_csv(stats_path, index_col=0)
     matches = pd.read_csv(matches_path)
     
-    # Clean whitespace from column headers
     stats.columns = stats.columns.str.strip()
     matches.columns = matches.columns.str.strip()
 
-    # DYNAMIC BRIDGE: Build a Team ID -> Team Name dictionary from match history
+    # Build Team ID -> Team Name dictionary
     id_to_name = {}
     if "home_team_id" in matches.columns and "home_team" in matches.columns:
         id_to_name.update(dict(zip(matches["home_team_id"], matches["home_team"])))
     if "away_team_id" in matches.columns and "away_team" in matches.columns:
         id_to_name.update(dict(zip(matches["away_team_id"], matches["away_team"])))
 
-    # Inject actual names into the stats dataframe using the bridge
-    # Checks if IDs live in the index or a dedicated column
+    # Map names to stats dataframe
     if "team_name" not in stats.columns and "team" not in stats.columns:
         if stats.index.name == "team_id" or stats.index.dtype in ["int64", "int32"]:
             stats["team_name"] = stats.index.map(id_to_name)
         elif "team_id" in stats.columns:
             stats["team_name"] = stats["team_id"].map(id_to_name)
         else:
-            # Fallback string conversion if no match is found
             stats["team_name"] = stats.index.astype(str)
     else:
-        # If a name column already exists, standardize its header name
         existing_col = "team" if "team" in stats.columns else "team_name"
         stats["team_name"] = stats[existing_col].astype(str)
 
-    # Fill any remaining blank names with their raw string IDs to avoid graphing blanks
     stats["team_name"] = stats["team_name"].fillna(stats.index.to_series().astype(str))
     
     return stats, matches
 
 stats_df, matches_df = load_and_map_data()
 
-# Only render if data loaded successfully
+# ----------------------------------
+# Render Dashboard UI
+# ----------------------------------
 if stats_df is not None and matches_df is not None:
 
-    # ----------------------------------
-    # Dynamic Metric Calculations
-    # ----------------------------------
-    # 1. Tournament Winner
+    # 1. Calculations
     final_match = matches_df[matches_df["round"] == "Final"]
     champion = final_match.iloc[0]["winner_actual"] if len(final_match) > 0 else "TBD"
 
-    # 2. Most Goals Scored
     max_goals = stats_df["goals_scored"].max()
     top_scorers = ", ".join(stats_df[stats_df["goals_scored"] == max_goals]["team_name"])
 
-    # 3. Most Goals Conceded
     max_conceded = stats_df["goals_conceded"].max()
     worst_defences = ", ".join(stats_df[stats_df["goals_conceded"] == max_conceded]["team_name"])
 
-    # 4. Biggest Upset
     if "rank_difference_earned" in matches_df.columns and matches_df["rank_difference_earned"].max() > 0:
         max_upset_idx = matches_df["rank_difference_earned"].idxmax()
         upset_row = matches_df.loc[max_upset_idx]
@@ -86,9 +114,7 @@ if stats_df is not None and matches_df is not None:
         upset_text = "None"
         upset_gap = "Gap: 0"
 
-    # ----------------------------------
-    # Top Level Metrics Display
-    # ----------------------------------
+    # 2. Display Cards
     st.header("Prize Winners 💰")
     col1, col2, col3, col4 = st.columns(4)
 
@@ -103,27 +129,17 @@ if stats_df is not None and matches_df is not None:
 
     st.divider()
 
-    # ----------------------------------
-    # Dynamic Bar Chart (With Names)
-    # ----------------------------------
+    # 3. Display Chart
     st.header("Team Statistics")
-
     available_metrics = [col for col in ["goals_scored", "goals_conceded", "draws"] if col in stats_df.columns]
     
     if available_metrics:
         sort_by = st.selectbox("Sort teams by:", available_metrics)
-        
-        # Sort data frame ahead of plotting
         chart_data = stats_df.sort_values(by=sort_by, ascending=False)
-        
-        # FIX: Explicitly set x-axis to our mapped team text names and y-axis to chosen metric
         st.bar_chart(data=chart_data, x="team_name", y=sort_by)
 
-    # ----------------------------------
-    # Match History Table
-    # ----------------------------------
+    # 4. Display Table
     st.header("Match History")
     desired_cols = ["date", "round", "home_team", "away_team", "winner_actual", "rank_difference_earned"]
     existing_cols = [col for col in desired_cols if col in matches_df.columns]
-    
     st.dataframe(matches_df[existing_cols], use_container_width=True)
