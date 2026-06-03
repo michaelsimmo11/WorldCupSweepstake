@@ -13,50 +13,39 @@ st.title("🏆 World Cup 2022 Sweepstake Dashboard")
 # ----------------------------------
 @st.cache_data
 def load_and_map_data():
-    # Force Python to look relative to the actual location of this script file
     base_dir = os.path.dirname(os.path.abspath(__file__))
     data_dir = os.path.join(base_dir, "data")
     
-    # Track potential naming variations across scripts
     stats_names = ["team_stats_2022.csv", "world_cup_2022_team_stats.csv"]
     matches_names = ["matches_2022.csv", "world_cup_2022_matches.csv"]
     
     stats_path = None
     matches_path = None
     
-    # Scan for the files dynamically
     if os.path.exists(data_dir):
         for name in stats_names:
             potential_path = os.path.join(data_dir, name)
             if os.path.exists(potential_path):
                 stats_path = potential_path
                 break
-        
         for name in matches_names:
             potential_path = os.path.join(data_dir, name)
             if os.path.exists(potential_path):
                 matches_path = potential_path
                 break
 
-    # If anything is missing, show a helpful diagnostic helper in the UI
     if not stats_path or not matches_path:
         st.error("⚠️ Data files not found!")
-        
-        with st.expander("Diagnostic Tool (Click to expand and see why)", expanded=True):
+        with st.expander("Diagnostic Tool (Click to expand)", expanded=True):
             st.markdown(f"**Dashboard Location:** `{base_dir}`")
             st.markdown(f"**Looking for data folder at:** `{data_dir}`")
-            
             if os.path.exists(data_dir):
                 st.success("✅ `data/` folder exists!")
-                st.markdown(f"**Files inside your data folder right now:**")
                 st.code(os.listdir(data_dir))
             else:
                 st.error("❌ The `data/` folder does not exist at that path.")
-                
-            st.info("💡 Quick Fix: Make sure you have run your transform.py script to generate the CSV files first!")
         return None, None
 
-    # Load data if paths are verified
     stats = pd.read_csv(stats_path, index_col=0)
     matches = pd.read_csv(matches_path)
     
@@ -94,15 +83,34 @@ stats_df, matches_df = load_and_map_data()
 if stats_df is not None and matches_df is not None:
 
     # 1. Calculations
+    # Tournament Winner
     final_match = matches_df[matches_df["round"] == "Final"]
     champion = final_match.iloc[0]["winner_actual"] if len(final_match) > 0 else "TBD"
 
+    # Most Goals Scored
     max_goals = stats_df["goals_scored"].max()
     top_scorers = ", ".join(stats_df[stats_df["goals_scored"] == max_goals]["team_name"])
 
+    # Most Goals Conceded
     max_conceded = stats_df["goals_conceded"].max()
     worst_defences = ", ".join(stats_df[stats_df["goals_conceded"] == max_conceded]["team_name"])
 
+    # Most Draws (With your custom Tie-Breaker)
+    if "draws" in stats_df.columns:
+        max_draws = stats_df["draws"].max()
+        tied_draw_rows = stats_df[stats_df["draws"] == max_draws]
+        
+        # Tie-breaker rule: Highest scoring team settles tie
+        max_goals_among_tied = tied_draw_rows["goals_scored"].max()
+        final_draw_rows = tied_draw_rows[tied_draw_rows["goals_scored"] == max_goals_among_tied]
+        
+        draw_teams = ", ".join(final_draw_rows["team_name"])
+        draws_delta = f"{max_draws} Draws"
+    else:
+        draw_teams = "N/A"
+        draws_delta = "0 Draws"
+
+    # Biggest Upset
     if "rank_difference_earned" in matches_df.columns and matches_df["rank_difference_earned"].max() > 0:
         max_upset_idx = matches_df["rank_difference_earned"].idxmax()
         upset_row = matches_df.loc[max_upset_idx]
@@ -114,9 +122,9 @@ if stats_df is not None and matches_df is not None:
         upset_text = "None"
         upset_gap = "Gap: 0"
 
-    # 2. Display Cards
+    # 2. Display Cards (Updated to 5 Columns)
     st.header("Prize Winners 💰")
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2, col3, col4, col5 = st.columns(5)
 
     with col1:
         st.metric(label="Tournament Winner (£120)", value=champion)
@@ -125,6 +133,8 @@ if stats_df is not None and matches_df is not None:
     with col3:
         st.metric(label="Most Conceded (£30)", value=worst_defences, delta=f"{max_conceded} Goals", delta_color="inverse")
     with col4:
+        st.metric(label="Most Draws (£30)", value=draw_teams, delta=draws_delta)
+    with col5:
         st.metric(label="Biggest Upset (£30)", value=upset_text, delta=upset_gap)
 
     st.divider()
