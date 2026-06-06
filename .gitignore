@@ -1,0 +1,26 @@
+# Python environment junk (keeps your commits clean)
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+ENV/
+
+# Streamlit configuration 
+.streamlit/
+secrets.toml
+
+# OS specific clutter
+.DS_Store
+Thumbs.db
+
+# Optional: If you don't want the raw, heavy JSON backup bloating your GitHub history
+# data/raw_world_cup_2026.json
+
+# Ignore the raw scraped data cache only
+data/raw_world_cup_2026.json
+
+# Keep ignoring environment files
+__pycache__/
+*.pyc
+.env
