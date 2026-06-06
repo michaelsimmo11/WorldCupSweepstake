@@ -9,6 +9,9 @@ on:
 jobs:
   update-data:
     runs-on: ubuntu-latest
+    # Add these two lines right here:
+    permissions:
+      contents: write
 
     steps:
     - name: Checkout Repository
