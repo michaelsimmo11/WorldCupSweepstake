@@ -6,10 +6,11 @@ st.set_page_config(page_title="World Cup 2026 Sweepstake", page_icon="🏆", lay
 
 st.title("🏆 World Cup 2026 Sweepstake Hub")
 
-# Updated path to the data folder
+# Establish player identity context 
 try:
     players_df = pd.read_csv('data/sweepstakeplayers.csv')
     team_to_player = dict(zip(players_df['Team'], players_df['Name']))
+    team_to_rank = dict(zip(players_df['Team'], players_df['FIFA_Rank_(Jun26)']))
 except FileNotFoundError:
     st.error("Missing sweepstakeplayers.csv in data/ directory.")
     st.stop()
@@ -44,7 +45,75 @@ if metrics:
 
 st.markdown("---")
 
-# --- 2. THE FIXTURE CENTRE ---
+# --- 2. INTERACTIVE ANALYTICS CHARTS ---
+st.header("📊 Sweepstake Analytics")
+
+try:
+    team_stats_df = pd.read_csv('data/team_stats_2026.csv')
+    matches_df = pd.read_csv('data/matches_2026.csv')
+    
+    # Create combined display label: "Country (Player)"
+    chart_data = pd.merge(players_df, team_stats_df, on='Team', how='left').fillna(0)
+    chart_data['Display Label'] = chart_data['Team'] + " (" + chart_data['Name'] + ")"
+    
+    # Dropdown menu to toggle between the 4 categories
+    category_view = st.selectbox(
+        "Select Category Leaderboard to Visualize:",
+        ["⚽ Most Goals Scored", "🧤 Most Goals Conceded", "🤝 Most 90-Min Draws", "💥 Biggest Upsets Board"]
+    )
+    
+    if category_view == "⚽ Most Goals Scored":
+        st.subheader("Top Goalscoring Teams")
+        goals_df = chart_data.sort_values(by='goals_scored', ascending=False).head(15)
+        # Set index to Display Label so Streamlit automatically uses it for the chart axis
+        st.bar_chart(data=goals_df, x='Display Label', y='goals_scored', color="#2ebd59")
+        
+    elif category_view == "🧤 Most Goals Conceded":
+        st.subheader("Leakiest Defenses (Most Conceded)")
+        conceded_df = chart_data.sort_values(by='goals_conceded', ascending=False).head(15)
+        st.bar_chart(data=conceded_df, x='Display Label', y='goals_conceded', color="#ff4b4b")
+        
+    elif category_view == "🤝 Most 90-Min Draws":
+        st.subheader("Tightly Contested Teams (Most Draws)")
+        draws_df = chart_data.sort_values(by='draws', ascending=False).head(15)
+        st.bar_chart(data=draws_df, x='Display Label', y='draws', color="#ffaa00")
+        
+    elif category_view == "💥 Biggest Upsets Board":
+        st.subheader("Highest Ranking Differentials in Finished Matches")
+        
+        finished_matches = matches_df[matches_df['status'] == 'FINISHED'].copy()
+        upset_list = []
+        
+        for _, match in finished_matches.iterrows():
+            home, away, winner = match['home_team'], match['away_team'], match['winner']
+            
+            if home in team_to_rank and away in team_to_rank:
+                home_rank = team_to_rank[home]
+                away_rank = team_to_rank[away]
+                
+                # Check for home upset
+                if winner == 'HOME_TEAM' and home_rank > away_rank:
+                    diff = home_rank - away_rank
+                    label = f"{home} ({team_to_player[home]}) def. {away}"
+                    upset_list.append({'Matchup': label, 'Rank Difference': diff})
+                # Check for away upset
+                elif winner == 'AWAY_TEAM' and away_rank > home_rank:
+                    diff = away_rank - home_rank
+                    label = f"{away} ({team_to_player[away]}) def. {home}"
+                    upset_list.append({'Matchup': label, 'Rank Difference': diff})
+                    
+        if upset_list:
+            upset_df = pd.DataFrame(upset_list).sort_values(by='Rank Difference', ascending=False).head(10)
+            st.bar_chart(data=upset_df, x='Matchup', y='Rank Difference', color="#7e57c2")
+        else:
+            st.info("No upsets have occurred yet! This chart will populate when a lower-ranked team wins.")
+
+except FileNotFoundError:
+    st.info("Run Ingestion and Transformation files first to build data visuals.")
+
+st.markdown("---")
+
+# --- 3. THE FIXTURE CENTRE ---
 st.header("📅 Matchday Hub")
 try:
     matches_df = pd.read_csv('data/matches_2026.csv')
@@ -80,10 +149,9 @@ except FileNotFoundError:
 
 st.markdown("---")
 
-# --- 3. MASTER SWEEPSTAKE STANDINGS ---
+# --- 4. MASTER SWEEPSTAKE STANDINGS ---
 st.header("👥 Participant Leaderboard")
 try:
-    team_stats_df = pd.read_csv('data/team_stats_2026.csv')
     master_standings = pd.merge(players_df, team_stats_df, on='Team', how='left').fillna(0)
     
     master_standings = master_standings[['Name', 'Team', 'FIFA_Rank_(Jun26)', 'goals_scored', 'goals_conceded', 'draws', 'Paid']]
