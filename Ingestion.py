@@ -2,7 +2,7 @@ import requests
 import json
 import os
 
-API_KEY = "94df9afd8d1a4c92b2de563647f64f1f"
+API_KEY = os.getenv('FOOTBALL_API_KEY')
 BASE_URL = 'https://api.football-data.org/v4/competitions/WC/matches'
 
 def fetch_world_cup_data():
