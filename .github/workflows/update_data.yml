@@ -9,7 +9,6 @@ on:
 jobs:
   update-data:
     runs-on: ubuntu-latest
-    # Add these two lines right here:
     permissions:
       contents: write
 
@@ -17,6 +16,13 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v4
 
+    # Explicitly sets up Node.js 24 environment
+    - name: Set up Node.js 24
+      uses: actions/setup-node@v4
+      with:
+        node-version: '24'
+
+    # Sets up Python environment
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
