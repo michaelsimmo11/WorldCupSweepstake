@@ -13,28 +13,32 @@ def transform_data():
     players_df = pd.read_csv('data/sweepstakeplayers.csv')
     teams = players_df['Team'].unique()
     
-    # 💥 FIX 1: Bake draw_goals_scored directly into the CSV engine
+    # Bake draw_goals_scored directly into the CSV engine
     team_stats = {team: {'goals_scored': 0, 'goals_conceded': 0, 'draws': 0, 'draw_goals_scored': 0} for team in teams}
     
     for match in matches:
-        home_team = match['homeTeam']['name']
-        away_team = match['awayTeam']['name']
-        status = match['status']
+        # Safely handle if team names are null/TBD
+        home_team = (match.get('homeTeam') or {}).get('name', 'Unknown')
+        away_team = (match.get('awayTeam') or {}).get('name', 'Unknown')
+        status = match.get('status')
         
-        # 💥 FIX 2: Safely extract scores to prevent API "null" crashes
-        score_data = match.get('score', {}).get('fullTime', {})
-        h_score = score_data.get('home')
-        a_score = score_data.get('away')
+        # 💥 THE FIX: Safely parse "null" API score objects using `or {}`
+        score_data = match.get('score') or {}
+        full_time = score_data.get('fullTime') or {}
+        
+        h_score = full_time.get('home')
+        a_score = full_time.get('away')
+        winner = score_data.get('winner')
         
         match_info = {
-            'match_id': match['id'],
+            'match_id': match.get('id'),
             'home_team': home_team,
             'away_team': away_team,
             'status': status,
             'home_score': h_score if status == 'FINISHED' else None,
             'away_score': a_score if status == 'FINISHED' else None,
-            'winner': match.get('score', {}).get('winner') if status == 'FINISHED' else None,
-            'utcDate': match['utcDate']
+            'winner': winner if status == 'FINISHED' else None,
+            'utcDate': match.get('utcDate')
         }
         match_list.append(match_info)
         
@@ -49,7 +53,7 @@ def transform_data():
                 team_stats[away_team]['goals_scored'] += a_val
                 team_stats[away_team]['goals_conceded'] += h_val
                 
-            if match_info['winner'] == 'DRAW':
+            if winner == 'DRAW':
                 if home_team in team_stats:
                     team_stats[home_team]['draws'] += 1
                     team_stats[home_team]['draw_goals_scored'] += h_val
