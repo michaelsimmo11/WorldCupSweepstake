@@ -126,12 +126,15 @@ try:
             st.dataframe(upcoming[['Kickoff (UTC)', 'Home Team', 'Away Team', 'status']], use_container_width=True, hide_index=True)
         else:
             st.success("No upcoming fixtures remaining!")
+
     with tab2:
         if not completed.empty:
-            completed['Score'] = completed['home_score'].astype(int).astype(str) + " - " + completed['away_score'].astype(int).astype(str)
-            st.dataframe(completed[['Home Team', 'Score', 'Away Team', 'winner']], use_container_width=True, hide_index=True)
+            # 💥 FIX 3: Added .fillna(0) so missing API scores don't crash the integer conversion!
+            completed['Score'] = completed['home_score'].fillna(0).astype(int).astype(str) + " - " + completed['away_score'].fillna(0).astype(int).astype(str)
+            st.dataframe(completed[['Home Team', 'Score', 'Away Team', 'winner']], 
+                         use_container_width=True, hide_index=True)
         else:
-            st.info("No matches finished yet.")
+            st.info("Tournament matches haven't started yet. Results will populate here.")
 except FileNotFoundError:
     st.warning("Run ingestion steps to populate data.")
 
