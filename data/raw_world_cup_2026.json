@@ -6,7 +6,7 @@
         "count": 104,
         "first": "2026-06-11",
         "last": "2026-07-19",
-        "played": 3
+        "played": 4
     },
     "competition": {
         "id": 2000,
@@ -175,7 +175,7 @@
             "matchday": 1,
             "stage": "GROUP_STAGE",
             "group": "GROUP_B",
-            "lastUpdated": "2026-06-12T21:04:08Z",
+            "lastUpdated": "2026-06-12T22:25:00Z",
             "homeTeam": {
                 "id": 828,
                 "name": "Canada",
@@ -237,11 +237,11 @@
             },
             "id": 537345,
             "utcDate": "2026-06-13T01:00:00Z",
-            "status": "TIMED",
+            "status": "FINISHED",
             "matchday": 1,
             "stage": "GROUP_STAGE",
             "group": "GROUP_D",
-            "lastUpdated": "2026-06-11T15:20:18Z",
+            "lastUpdated": "2026-06-13T03:25:00Z",
             "homeTeam": {
                 "id": 771,
                 "name": "United States",
@@ -257,15 +257,15 @@
                 "crest": "https://crests.football-data.org/761.svg"
             },
             "score": {
-                "winner": null,
+                "winner": "HOME_TEAM",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 4,
+                    "away": 1
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 3,
+                    "away": 0
                 }
             },
             "odds": {

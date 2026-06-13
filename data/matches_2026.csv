@@ -2,7 +2,7 @@ match_id,home_team,away_team,status,home_score,away_score,winner,utcDate
 537327,Mexico,South Africa,FINISHED,2.0,0.0,HOME_TEAM,2026-06-11T19:00:00Z
 537328,South Korea,Czechia,FINISHED,2.0,1.0,HOME_TEAM,2026-06-12T02:00:00Z
 537333,Canada,Bosnia-Herzegovina,FINISHED,1.0,1.0,DRAW,2026-06-12T19:00:00Z
-537345,United States,Paraguay,TIMED,,,,2026-06-13T01:00:00Z
+537345,United States,Paraguay,FINISHED,4.0,1.0,HOME_TEAM,2026-06-13T01:00:00Z
 537334,Qatar,Switzerland,TIMED,,,,2026-06-13T19:00:00Z
 537339,Brazil,Morocco,TIMED,,,,2026-06-13T22:00:00Z
 537340,Haiti,Scotland,TIMED,,,,2026-06-14T01:00:00Z
