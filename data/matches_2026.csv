@@ -6,7 +6,7 @@ match_id,home_team,away_team,status,home_score,away_score,winner,utcDate
 537334,Qatar,Switzerland,FINISHED,1.0,1.0,DRAW,2026-06-13T19:00:00Z
 537339,Brazil,Morocco,FINISHED,1.0,1.0,DRAW,2026-06-13T22:00:00Z
 537340,Haiti,Scotland,FINISHED,0.0,1.0,AWAY_TEAM,2026-06-14T01:00:00Z
-537346,Australia,Turkey,PAUSED,,,,2026-06-14T04:00:00Z
+537346,Australia,Turkey,FINISHED,2.0,0.0,HOME_TEAM,2026-06-14T04:00:00Z
 537351,Germany,Curaçao,TIMED,,,,2026-06-14T17:00:00Z
 537357,Netherlands,Japan,TIMED,,,,2026-06-14T20:00:00Z
 537352,Ivory Coast,Ecuador,TIMED,,,,2026-06-14T23:00:00Z
