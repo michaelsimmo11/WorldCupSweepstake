@@ -2,14 +2,14 @@ Team,goals_scored,goals_conceded,draws,draw_goals_scored
 France,3,1,0,0
 Spain,0,0,1,0
 Argentina,3,0,0,0
-England,0,0,0,0
-Portugal,0,0,0,0
+England,4,2,0,0
+Portugal,1,1,1,1
 Brazil,1,1,1,1
 Netherlands,2,2,1,2
 Morocco,1,1,1,1
 Belgium,1,1,1,1
 Germany,7,1,0,0
-Croatia,0,0,0,0
+Croatia,2,4,0,0
 Colombia,0,0,0,0
 Senegal,1,3,0,0
 Mexico,2,0,0,0
@@ -34,7 +34,7 @@ Paraguay,1,4,0,0
 Czechia,1,2,0,0
 Scotland,1,0,0,0
 Tunisia,1,5,0,0
-Congo DR,0,0,0,0
+Congo DR,1,1,1,1
 Uzbekistan,0,0,0,0
 Qatar,1,1,1,1
 Iraq,1,4,0,0
