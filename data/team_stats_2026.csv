@@ -1,7 +1,7 @@
 Team,goals_scored,goals_conceded,draws,draw_goals_scored
 France,3,1,0,0
 Spain,0,0,1,0
-Argentina,0,0,0,0
+Argentina,3,0,0,0
 England,0,0,0,0
 Portugal,0,0,0,0
 Brazil,1,1,1,1
@@ -24,9 +24,9 @@ Austria,0,0,0,0
 South Korea,2,1,0,0
 Australia,2,0,0,0
 Egypt,1,1,1,1
-Algeria,0,0,0,0
+Algeria,0,3,0,0
 Canada,1,1,1,1
-Norway,0,0,0,0
+Norway,4,1,0,0
 Panama,0,0,0,0
 Ivory Coast,1,0,0,0
 Sweden,5,1,0,0
@@ -37,7 +37,7 @@ Tunisia,1,5,0,0
 Congo DR,0,0,0,0
 Uzbekistan,0,0,0,0
 Qatar,1,1,1,1
-Iraq,0,0,0,0
+Iraq,1,4,0,0
 South Africa,0,2,0,0
 Saudi Arabia,1,1,1,1
 Jordan,0,0,0,0
