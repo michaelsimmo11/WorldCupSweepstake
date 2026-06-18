@@ -6,7 +6,7 @@
         "count": 104,
         "first": "2026-06-11",
         "last": "2026-07-19",
-        "played": 23
+        "played": 24
     },
     "competition": {
         "id": 2000,
@@ -1491,7 +1491,7 @@
             },
             "id": 537410,
             "utcDate": "2026-06-17T23:00:00Z",
-            "status": "IN_PLAY",
+            "status": "FINISHED",
             "matchday": 1,
             "stage": "GROUP_STAGE",
             "group": "GROUP_L",
@@ -1657,7 +1657,14 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [
+                {
+                    "id": 212450,
+                    "name": "Tori Penso",
+                    "type": "REFEREE",
+                    "nationality": "USA"
+                }
+            ]
         },
         {
             "area": {
