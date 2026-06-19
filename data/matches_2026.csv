@@ -27,7 +27,7 @@ match_id,home_team,away_team,status,home_score,away_score,winner,utcDate
 537335,Switzerland,Bosnia-Herzegovina,FINISHED,4.0,1.0,HOME_TEAM,2026-06-18T19:00:00Z
 537336,Canada,Qatar,FINISHED,6.0,0.0,HOME_TEAM,2026-06-18T22:00:00Z
 537330,Mexico,South Korea,FINISHED,1.0,0.0,HOME_TEAM,2026-06-19T01:00:00Z
-537348,United States,Australia,TIMED,,,,2026-06-19T19:00:00Z
+537348,United States,Australia,FINISHED,2.0,0.0,HOME_TEAM,2026-06-19T19:00:00Z
 537342,Scotland,Morocco,TIMED,,,,2026-06-19T22:00:00Z
 537341,Brazil,Haiti,TIMED,,,,2026-06-20T00:30:00Z
 537347,Turkey,Paraguay,TIMED,,,,2026-06-20T03:00:00Z
