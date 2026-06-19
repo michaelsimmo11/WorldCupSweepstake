@@ -6,7 +6,7 @@
         "count": 104,
         "first": "2026-06-11",
         "last": "2026-07-19",
-        "played": 26
+        "played": 28
     },
     "competition": {
         "id": 2000,
@@ -1627,7 +1627,7 @@
             "matchday": 2,
             "stage": "GROUP_STAGE",
             "group": "GROUP_A",
-            "lastUpdated": "2026-06-18T18:03:38Z",
+            "lastUpdated": "2026-06-19T03:25:00Z",
             "homeTeam": {
                 "id": 798,
                 "name": "Czechia",
@@ -1693,7 +1693,7 @@
             "matchday": 2,
             "stage": "GROUP_STAGE",
             "group": "GROUP_B",
-            "lastUpdated": "2026-06-18T21:06:43Z",
+            "lastUpdated": "2026-06-19T03:25:00Z",
             "homeTeam": {
                 "id": 788,
                 "name": "Switzerland",
@@ -1755,11 +1755,11 @@
             },
             "id": 537336,
             "utcDate": "2026-06-18T22:00:00Z",
-            "status": "IN_PLAY",
+            "status": "FINISHED",
             "matchday": 2,
             "stage": "GROUP_STAGE",
             "group": "GROUP_B",
-            "lastUpdated": "2026-06-18T22:20:29Z",
+            "lastUpdated": "2026-06-19T03:25:00Z",
             "homeTeam": {
                 "id": 828,
                 "name": "Canada",
@@ -1775,15 +1775,15 @@
                 "crest": "https://crests.football-data.org/8030.svg"
             },
             "score": {
-                "winner": "DRAW",
+                "winner": "HOME_TEAM",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": 0,
+                    "home": 6,
                     "away": 0
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 3,
+                    "away": 0
                 }
             },
             "odds": {
@@ -1821,11 +1821,11 @@
             },
             "id": 537330,
             "utcDate": "2026-06-19T01:00:00Z",
-            "status": "TIMED",
+            "status": "FINISHED",
             "matchday": 2,
             "stage": "GROUP_STAGE",
             "group": "GROUP_A",
-            "lastUpdated": "2026-06-16T15:20:15Z",
+            "lastUpdated": "2026-06-19T03:25:00Z",
             "homeTeam": {
                 "id": 769,
                 "name": "Mexico",
@@ -1841,21 +1841,28 @@
                 "crest": "https://crests.football-data.org/772.png"
             },
             "score": {
-                "winner": null,
+                "winner": "HOME_TEAM",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 1,
+                    "away": 0
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 0,
+                    "away": 0
                 }
             },
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [
+                {
+                    "id": 260120,
+                    "name": "Gustavo Tejera",
+                    "type": "REFEREE",
+                    "nationality": "Uruguay"
+                }
+            ]
         },
         {
             "area": {
