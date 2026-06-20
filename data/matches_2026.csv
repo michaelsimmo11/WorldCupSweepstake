@@ -31,7 +31,7 @@ match_id,home_team,away_team,status,home_score,away_score,winner,utcDate
 537342,Scotland,Morocco,FINISHED,0.0,1.0,AWAY_TEAM,2026-06-19T22:00:00Z
 537341,Brazil,Haiti,FINISHED,3.0,0.0,HOME_TEAM,2026-06-20T00:30:00Z
 537347,Turkey,Paraguay,FINISHED,0.0,1.0,AWAY_TEAM,2026-06-20T03:00:00Z
-537359,Netherlands,Sweden,TIMED,,,,2026-06-20T17:00:00Z
+537359,Netherlands,Sweden,IN_PLAY,,,,2026-06-20T17:00:00Z
 537353,Germany,Ivory Coast,TIMED,,,,2026-06-20T20:00:00Z
 537354,Ecuador,Curaçao,TIMED,,,,2026-06-21T00:00:00Z
 537360,Tunisia,Japan,TIMED,,,,2026-06-21T04:00:00Z
