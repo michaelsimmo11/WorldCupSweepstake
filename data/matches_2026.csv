@@ -34,7 +34,7 @@ match_id,home_team,away_team,status,home_score,away_score,winner,utcDate
 537359,Netherlands,Sweden,FINISHED,5.0,1.0,HOME_TEAM,2026-06-20T17:00:00Z
 537353,Germany,Ivory Coast,FINISHED,2.0,1.0,HOME_TEAM,2026-06-20T20:00:00Z
 537354,Ecuador,Curaçao,FINISHED,0.0,0.0,DRAW,2026-06-21T00:00:00Z
-537360,Tunisia,Japan,PAUSED,,,,2026-06-21T04:00:00Z
+537360,Tunisia,Japan,FINISHED,0.0,4.0,AWAY_TEAM,2026-06-21T04:00:00Z
 537371,Spain,Saudi Arabia,TIMED,,,,2026-06-21T16:00:00Z
 537365,Belgium,Iran,TIMED,,,,2026-06-21T19:00:00Z
 537372,Uruguay,Cape Verde Islands,TIMED,,,,2026-06-21T22:00:00Z
