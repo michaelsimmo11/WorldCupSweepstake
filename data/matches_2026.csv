@@ -39,7 +39,7 @@ match_id,home_team,away_team,status,home_score,away_score,winner,utcDate
 537365,Belgium,Iran,FINISHED,0.0,0.0,DRAW,2026-06-21T19:00:00Z
 537372,Uruguay,Cape Verde Islands,FINISHED,2.0,2.0,DRAW,2026-06-21T22:00:00Z
 537366,New Zealand,Egypt,FINISHED,1.0,3.0,AWAY_TEAM,2026-06-22T01:00:00Z
-537399,Argentina,Austria,TIMED,,,,2026-06-22T17:00:00Z
+537399,Argentina,Austria,FINISHED,2.0,0.0,HOME_TEAM,2026-06-22T17:00:00Z
 537393,France,Iraq,TIMED,,,,2026-06-22T21:00:00Z
 537394,Norway,Senegal,TIMED,,,,2026-06-23T00:00:00Z
 537400,Jordan,Algeria,TIMED,,,,2026-06-23T03:00:00Z
