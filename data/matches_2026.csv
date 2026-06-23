@@ -43,7 +43,7 @@ match_id,home_team,away_team,status,home_score,away_score,winner,utcDate
 537393,France,Iraq,FINISHED,3.0,0.0,HOME_TEAM,2026-06-22T21:00:00Z
 537394,Norway,Senegal,FINISHED,3.0,2.0,HOME_TEAM,2026-06-23T00:00:00Z
 537400,Jordan,Algeria,FINISHED,1.0,2.0,AWAY_TEAM,2026-06-23T03:00:00Z
-537405,Portugal,Uzbekistan,TIMED,,,,2026-06-23T17:00:00Z
+537405,Portugal,Uzbekistan,PAUSED,,,,2026-06-23T17:00:00Z
 537411,England,Ghana,TIMED,,,,2026-06-23T20:00:00Z
 537412,Panama,Croatia,TIMED,,,,2026-06-23T23:00:00Z
 537406,Colombia,Congo DR,TIMED,,,,2026-06-24T02:00:00Z
