@@ -6,7 +6,7 @@
         "count": 104,
         "first": "2026-06-11",
         "last": "2026-07-19",
-        "played": 43
+        "played": 44
     },
     "competition": {
         "id": 2000,
@@ -2683,7 +2683,7 @@
             "matchday": 2,
             "stage": "GROUP_STAGE",
             "group": "GROUP_J",
-            "lastUpdated": "2026-06-22T21:02:08Z",
+            "lastUpdated": "2026-06-23T08:25:01Z",
             "homeTeam": {
                 "id": 762,
                 "name": "Argentina",
@@ -2749,7 +2749,7 @@
             "matchday": 2,
             "stage": "GROUP_STAGE",
             "group": "GROUP_I",
-            "lastUpdated": "2026-06-23T02:49:31Z",
+            "lastUpdated": "2026-06-23T08:25:01Z",
             "homeTeam": {
                 "id": 773,
                 "name": "France",
@@ -2815,7 +2815,7 @@
             "matchday": 2,
             "stage": "GROUP_STAGE",
             "group": "GROUP_I",
-            "lastUpdated": "2026-06-23T02:06:01Z",
+            "lastUpdated": "2026-06-23T08:25:01Z",
             "homeTeam": {
                 "id": 8872,
                 "name": "Norway",
@@ -2877,11 +2877,11 @@
             },
             "id": 537400,
             "utcDate": "2026-06-23T03:00:00Z",
-            "status": "PAUSED",
+            "status": "FINISHED",
             "matchday": 2,
             "stage": "GROUP_STAGE",
             "group": "GROUP_J",
-            "lastUpdated": "2026-06-23T03:57:16Z",
+            "lastUpdated": "2026-06-23T08:25:01Z",
             "homeTeam": {
                 "id": 8049,
                 "name": "Jordan",
@@ -2897,11 +2897,11 @@
                 "crest": "https://crests.football-data.org/algeria.svg"
             },
             "score": {
-                "winner": "HOME_TEAM",
+                "winner": "AWAY_TEAM",
                 "duration": "REGULAR",
                 "fullTime": {
                     "home": 1,
-                    "away": 0
+                    "away": 2
                 },
                 "halfTime": {
                     "home": 1,
