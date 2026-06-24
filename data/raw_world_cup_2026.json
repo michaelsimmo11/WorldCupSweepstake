@@ -6,7 +6,7 @@
         "count": 104,
         "first": "2026-06-11",
         "last": "2026-07-19",
-        "played": 48
+        "played": 50
     },
     "competition": {
         "id": 2000,
@@ -3193,11 +3193,11 @@
             },
             "id": 537337,
             "utcDate": "2026-06-24T19:00:00Z",
-            "status": "TIMED",
+            "status": "FINISHED",
             "matchday": 3,
             "stage": "GROUP_STAGE",
             "group": "GROUP_B",
-            "lastUpdated": "2026-06-23T15:20:15Z",
+            "lastUpdated": "2026-06-24T21:05:55Z",
             "homeTeam": {
                 "id": 788,
                 "name": "Switzerland",
@@ -3213,15 +3213,15 @@
                 "crest": "https://crests.football-data.org/canada.svg"
             },
             "score": {
-                "winner": null,
+                "winner": "HOME_TEAM",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 2,
+                    "away": 1
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 0,
+                    "away": 0
                 }
             },
             "odds": {
@@ -3259,11 +3259,11 @@
             },
             "id": 537338,
             "utcDate": "2026-06-24T19:00:00Z",
-            "status": "TIMED",
+            "status": "FINISHED",
             "matchday": 3,
             "stage": "GROUP_STAGE",
             "group": "GROUP_B",
-            "lastUpdated": "2026-06-23T15:20:15Z",
+            "lastUpdated": "2026-06-24T21:08:54Z",
             "homeTeam": {
                 "id": 1060,
                 "name": "Bosnia-Herzegovina",
@@ -3279,15 +3279,15 @@
                 "crest": "https://crests.football-data.org/8030.svg"
             },
             "score": {
-                "winner": null,
+                "winner": "HOME_TEAM",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 3,
+                    "away": 1
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 2,
+                    "away": 1
                 }
             },
             "odds": {
@@ -3359,7 +3359,14 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [
+                {
+                    "id": 43899,
+                    "name": "Danny Makkelie",
+                    "type": "REFEREE",
+                    "nationality": "Netherlands"
+                }
+            ]
         },
         {
             "area": {
@@ -3418,7 +3425,14 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [
+                {
+                    "id": 56007,
+                    "name": "C\u00e9sar Ramos",
+                    "type": "REFEREE",
+                    "nationality": "Mexico"
+                }
+            ]
         },
         {
             "area": {
