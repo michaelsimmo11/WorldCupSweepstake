@@ -3227,7 +3227,14 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [
+                {
+                    "id": 18754,
+                    "name": "Ramon Abatti Abel",
+                    "type": "REFEREE",
+                    "nationality": "Brazil"
+                }
+            ]
         },
         {
             "area": {
@@ -3286,7 +3293,14 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [
+                {
+                    "id": 28805,
+                    "name": "Jes\u00fas Valenzuela",
+                    "type": "REFEREE",
+                    "nationality": "Venezuela"
+                }
+            ]
         },
         {
             "area": {
