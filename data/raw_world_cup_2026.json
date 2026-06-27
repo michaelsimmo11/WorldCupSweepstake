@@ -4381,11 +4381,11 @@
             },
             "id": 537413,
             "utcDate": "2026-06-27T21:00:00Z",
-            "status": "TIMED",
+            "status": "IN_PLAY",
             "matchday": 3,
             "stage": "GROUP_STAGE",
             "group": "GROUP_L",
-            "lastUpdated": "2026-06-26T15:20:14Z",
+            "lastUpdated": "2026-06-27T21:12:52Z",
             "homeTeam": {
                 "id": 1836,
                 "name": "Panama",
@@ -4401,11 +4401,11 @@
                 "crest": "https://crests.football-data.org/770.svg"
             },
             "score": {
-                "winner": null,
+                "winner": "DRAW",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 0,
+                    "away": 0
                 },
                 "halfTime": {
                     "home": null,
@@ -4415,7 +4415,14 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [
+                {
+                    "id": 236084,
+                    "name": "Abdulrahman Al Jassim",
+                    "type": "REFEREE",
+                    "nationality": "Qatar"
+                }
+            ]
         },
         {
             "area": {
@@ -4440,11 +4447,11 @@
             },
             "id": 537414,
             "utcDate": "2026-06-27T21:00:00Z",
-            "status": "TIMED",
+            "status": "LIVE",
             "matchday": 3,
             "stage": "GROUP_STAGE",
             "group": "GROUP_L",
-            "lastUpdated": "2026-06-26T15:20:14Z",
+            "lastUpdated": "2026-06-27T21:12:17Z",
             "homeTeam": {
                 "id": 799,
                 "name": "Croatia",
@@ -4460,11 +4467,11 @@
                 "crest": "https://crests.football-data.org/ghana.svg"
             },
             "score": {
-                "winner": null,
+                "winner": "DRAW",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 0,
+                    "away": 0
                 },
                 "halfTime": {
                     "home": null,
@@ -4474,7 +4481,14 @@
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [
+                {
+                    "id": 77052,
+                    "name": "Drew Fischer",
+                    "type": "REFEREE",
+                    "nationality": "Canada"
+                }
+            ]
         },
         {
             "area": {
