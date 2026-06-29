@@ -72,7 +72,7 @@ match_id,home_team,away_team,status,home_score,away_score,winner,utcDate
 537401,Jordan,Argentina,FINISHED,1.0,3.0,AWAY_TEAM,2026-06-28T02:00:00Z
 537402,Algeria,Austria,FINISHED,3.0,3.0,DRAW,2026-06-28T02:00:00Z
 537417,South Africa,Canada,FINISHED,0.0,1.0,AWAY_TEAM,2026-06-28T19:00:00Z
-537423,Brazil,Japan,TIMED,,,,2026-06-29T17:00:00Z
+537423,Brazil,Japan,IN_PLAY,,,,2026-06-29T17:00:00Z
 537415,Germany,Paraguay,TIMED,,,,2026-06-29T20:30:00Z
 537418,Netherlands,Morocco,TIMED,,,,2026-06-30T01:00:00Z
 537424,Ivory Coast,Norway,TIMED,,,,2026-06-30T17:00:00Z
