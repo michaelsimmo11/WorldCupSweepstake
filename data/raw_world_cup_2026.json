@@ -6,7 +6,7 @@
         "count": 104,
         "first": "2026-06-11",
         "last": "2026-07-19",
-        "played": 74
+        "played": 76
     },
     "competition": {
         "id": 2000,
@@ -4909,11 +4909,11 @@
             },
             "id": 537415,
             "utcDate": "2026-06-29T20:30:00Z",
-            "status": "PAUSED",
+            "status": "FINISHED",
             "matchday": null,
             "stage": "LAST_32",
             "group": null,
-            "lastUpdated": "2026-06-29T21:26:57Z",
+            "lastUpdated": "2026-06-30T00:27:13Z",
             "homeTeam": {
                 "id": 759,
                 "name": "Germany",
@@ -4929,15 +4929,27 @@
                 "crest": "https://crests.football-data.org/761.svg"
             },
             "score": {
-                "winner": "AWAY_TEAM",
-                "duration": "REGULAR",
+                "winner": null,
+                "duration": "PENALTY_SHOOTOUT",
                 "fullTime": {
-                    "home": 0,
-                    "away": 1
+                    "home": 4,
+                    "away": 5
                 },
                 "halfTime": {
                     "home": 0,
                     "away": 1
+                },
+                "regularTime": {
+                    "home": 1,
+                    "away": 1
+                },
+                "extraTime": {
+                    "home": 0,
+                    "away": 0
+                },
+                "penalties": {
+                    "home": 4,
+                    "away": 4
                 }
             },
             "odds": {
@@ -4975,11 +4987,11 @@
             },
             "id": 537418,
             "utcDate": "2026-06-30T01:00:00Z",
-            "status": "TIMED",
+            "status": "FINISHED",
             "matchday": null,
             "stage": "LAST_32",
             "group": null,
-            "lastUpdated": "2026-06-29T05:20:12Z",
+            "lastUpdated": "2026-06-30T04:08:17Z",
             "homeTeam": {
                 "id": 8601,
                 "name": "Netherlands",
@@ -4996,20 +5008,39 @@
             },
             "score": {
                 "winner": null,
-                "duration": "REGULAR",
+                "duration": "PENALTY_SHOOTOUT",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 3,
+                    "away": 4
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 0,
+                    "away": 0
+                },
+                "regularTime": {
+                    "home": 1,
+                    "away": 1
+                },
+                "extraTime": {
+                    "home": 0,
+                    "away": 0
+                },
+                "penalties": {
+                    "home": 3,
+                    "away": 3
                 }
             },
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [
+                {
+                    "id": 11412,
+                    "name": "Wilton Sampaio",
+                    "type": "REFEREE",
+                    "nationality": "Brazil"
+                }
+            ]
         },
         {
             "area": {
