@@ -37,8 +37,8 @@ if results:
         
     with c4:
         md = results['most_draws']
-        st.metric(f"Most Draws (£30): {md['Name']}", f"{int(md['draws'])} Draws")
-        st.caption(f"Team: **{md['Team']}** (Goals in draws: {int(md['draw_goals_scored'])})")
+        st.metric(f"Most 90-Min Draws (£30): {md['Name']}", f"{int(md['draws'])} Draws")
+        st.caption(f"Team: **{md['Team']}** (90-Min Draw Goals: {int(md['draw_goals_scored'])})")
         
     with c5:
         u = results['biggest_upset']

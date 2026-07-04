@@ -15,6 +15,7 @@ def calculate_sweepstake_metrics():
         # Apply Ironclad Tie-Breakers via Multi-Column Sorting
         most_goals_winner = merged.sort_values(by=['goals_scored', 'goals_conceded'], ascending=[False, True]).iloc[0]
         most_conceded_winner = merged.sort_values(by=['goals_conceded', 'goals_scored'], ascending=[False, False]).iloc[0]
+        # Apply Ironclad Tie-Breakers via Multi-Column Sorting
         most_draws_winner = merged.sort_values(by=['draws', 'draw_goals_scored'], ascending=[False, False]).iloc[0]
         
         # Calculate Biggest Upset
