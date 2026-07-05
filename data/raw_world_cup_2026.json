@@ -6017,11 +6017,11 @@
             },
             "id": 537377,
             "utcDate": "2026-07-05T20:00:00Z",
-            "status": "TIMED",
+            "status": "PAUSED",
             "matchday": null,
             "stage": "LAST_16",
             "group": null,
-            "lastUpdated": "2026-07-05T05:20:12Z",
+            "lastUpdated": "2026-07-05T20:59:47Z",
             "homeTeam": {
                 "id": 764,
                 "name": "Brazil",
@@ -6037,21 +6037,28 @@
                 "crest": "https://crests.football-data.org/813.svg"
             },
             "score": {
-                "winner": null,
+                "winner": "DRAW",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 0,
+                    "away": 0
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 0,
+                    "away": 0
                 }
             },
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [
+                {
+                    "id": 76608,
+                    "name": "Ismail Elfath",
+                    "type": "REFEREE",
+                    "nationality": "United States"
+                }
+            ]
         },
         {
             "area": {
