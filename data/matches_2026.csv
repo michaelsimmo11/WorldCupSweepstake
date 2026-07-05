@@ -88,7 +88,7 @@ match_id,home_team,away_team,status,home_score,away_score,winner,utcDate
 537427,Argentina,Cape Verde Islands,FINISHED,3.0,2.0,HOME_TEAM,2026-07-03T22:00:00Z
 537430,Colombia,Ghana,FINISHED,1.0,0.0,HOME_TEAM,2026-07-04T01:30:00Z
 537376,Canada,Morocco,FINISHED,0.0,3.0,AWAY_TEAM,2026-07-04T17:00:00Z
-537375,Paraguay,France,IN_PLAY,,,,2026-07-04T21:00:00Z
+537375,Paraguay,France,FINISHED,0.0,1.0,AWAY_TEAM,2026-07-04T21:00:00Z
 537377,Brazil,Norway,TIMED,,,,2026-07-05T20:00:00Z
 537378,Mexico,England,TIMED,,,,2026-07-06T00:00:00Z
 537379,Portugal,Spain,TIMED,,,,2026-07-06T19:00:00Z
