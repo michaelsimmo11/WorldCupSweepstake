@@ -6,7 +6,7 @@
         "count": 104,
         "first": "2026-06-11",
         "last": "2026-07-19",
-        "played": 93
+        "played": 94
     },
     "competition": {
         "id": 2000,
@@ -6153,7 +6153,7 @@
             "matchday": null,
             "stage": "LAST_16",
             "group": null,
-            "lastUpdated": "2026-07-06T21:06:44Z",
+            "lastUpdated": "2026-07-07T03:25:01Z",
             "homeTeam": {
                 "id": 765,
                 "name": "Portugal",
@@ -6215,11 +6215,11 @@
             },
             "id": 537380,
             "utcDate": "2026-07-07T00:00:00Z",
-            "status": "TIMED",
+            "status": "FINISHED",
             "matchday": null,
             "stage": "LAST_16",
             "group": null,
-            "lastUpdated": "2026-07-06T05:20:12Z",
+            "lastUpdated": "2026-07-07T03:25:01Z",
             "homeTeam": {
                 "id": 771,
                 "name": "United States",
@@ -6235,21 +6235,28 @@
                 "crest": "https://crests.football-data.org/805.svg"
             },
             "score": {
-                "winner": null,
+                "winner": "AWAY_TEAM",
                 "duration": "REGULAR",
                 "fullTime": {
-                    "home": null,
-                    "away": null
+                    "home": 1,
+                    "away": 4
                 },
                 "halfTime": {
-                    "home": null,
-                    "away": null
+                    "home": 1,
+                    "away": 2
                 }
             },
             "odds": {
                 "msg": "Activate Odds-Package in User-Panel to retrieve odds."
             },
-            "referees": []
+            "referees": [
+                {
+                    "id": 129250,
+                    "name": "Adham Makhadmeh",
+                    "type": "REFEREE",
+                    "nationality": "Jordan"
+                }
+            ]
         },
         {
             "area": {
