@@ -95,7 +95,7 @@ match_id,home_team,away_team,status,home_score,away_score,winner,utcDate
 537380,United States,Belgium,FINISHED,1.0,4.0,AWAY_TEAM,2026-07-07T00:00:00Z
 537381,Argentina,Egypt,FINISHED,3.0,2.0,HOME_TEAM,2026-07-07T16:00:00Z
 537382,Switzerland,Colombia,FINISHED,4.0,3.0,HOME_TEAM,2026-07-07T20:00:00Z
-537383,France,Morocco,IN_PLAY,,,,2026-07-09T20:00:00Z
+537383,France,Morocco,FINISHED,2.0,0.0,HOME_TEAM,2026-07-09T20:00:00Z
 537384,Spain,Belgium,TIMED,,,,2026-07-10T19:00:00Z
 537385,Norway,England,TIMED,,,,2026-07-11T21:00:00Z
 537386,Argentina,Switzerland,TIMED,,,,2026-07-12T01:00:00Z
